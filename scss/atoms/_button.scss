@@ -1,0 +1,17 @@
+button {
+
+    color: $btn-default-color;
+    background-color: $btn-default-backgroundColor;
+    padding: $btn-default-padding;
+
+    &:hover {
+
+        
+    }
+    
+    // Form submit button
+    &[type="submit"] {
+
+
+    }
+}

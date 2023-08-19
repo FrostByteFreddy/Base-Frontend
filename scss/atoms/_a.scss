@@ -1,0 +1,107 @@
+a {
+
+    position: relative;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
+
+        // Add general hover effect here
+    }
+
+    // All buttons
+    &.btn {
+
+        color: $btn-default-color;
+        background-color: $btn-default-backgroundColor;
+
+        font-size: $btn-default-fontSize;
+        line-height: $btn-default-lineHeight;
+        font-weight: $btn-default-fontWeight;
+        padding: $btn-default-padding;
+        border-radius: $btn-default-borderRadius;
+
+        text-align: center;
+        max-width: max-content;
+        display: flex;
+
+        transition: $btn-default-transition;
+
+        &:hover {
+
+
+        }
+
+        // Primary
+        &.primary {
+
+            color: $btn-primary-color;
+            background-color: $btn-primary-backgroundColor;
+
+            &:hover {
+
+
+            }
+        }
+
+        // Secondary
+        &.secondary {
+
+            color: $btn-secondary-color;
+            background-color: $btn-secondary-backgroundColor;
+
+            &:hover {
+
+
+            }
+        }  
+
+        // Quaternary
+        &.tertiary {
+
+            color: $btn-tertiary-color;
+            background-color: $btn-tertiary-backgroundColor;
+
+            &:hover {
+
+
+            }            
+        }
+
+        // Buttons with icons
+        // The Icon itself is added via a classname containing the icon name: 
+        // <a class="btn primary icon-left icon-clock">
+        // Icons are specified in the variables.scss
+        &.icon {
+
+            // Icon on left side
+            &-left {
+
+                padding-left: $btn-default-paddingWithButtonIcon;
+
+                &::after {
+
+                    @include icon(left);
+                }
+            }
+
+            // Icon on right side
+            &-right {
+
+                padding-right: $btn-default-paddingWithButtonIcon;
+
+                &::after {
+
+                    @include icon(right);
+                }
+            }
+
+            &:hover {
+
+                // override button hover if necessary
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+///////////////////////////////////////////////
+// Main <main>
+///////////////////////////////////////////////
+
+main {
+    
+    // Desktop
+    margin-top: $header-heightDesktopMaximized;
+    transition: margin-top $header-heightTransitionSpeed ease;
+
+    // When header is minimized on Desktop
+    header[data-state="minimized"] + & {
+
+        margin-top: $header-heightDesktopMinimized;
+    }
+
+    // Mobile
+    @include below('md') {
+
+        margin-top: $header-heightMobileMaximized;
+
+        // When header is minimized on Mobile
+        header[data-state="minimized"] + & {
+
+            margin-top: $header-heightMobileMinimized;
+        }
+    }
+}

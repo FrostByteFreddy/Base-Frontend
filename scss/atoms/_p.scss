@@ -1,0 +1,32 @@
+///////////////////////////////////////////////
+// Paragraphs
+///////////////////////////////////////////////
+
+p {
+
+    margin: 0;
+    line-height: $p-lineHeight;
+
+    & + p {
+
+        margin-top: $p-consecutiveMarginTop;
+    }
+
+    // Lead text
+    &.lead {
+
+        font-size: $p-lead-fontSize;
+        font-weight: $p-lead-fontWeight;
+        color: $p-lead-color;
+    }
+
+    &.align-right {
+
+        text-align: right;
+    }
+
+    &.text-center {
+
+        text-align: center;
+    }
+}

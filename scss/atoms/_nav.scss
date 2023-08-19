@@ -1,0 +1,19 @@
+///////////////////////////////////////////////
+// Navigation <nav>
+///////////////////////////////////////////////
+
+nav {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: $container-maxWidthDesktop;
+    margin: auto;
+
+     // Limit width to some viewport width instead of px
+    @include below('xl') {
+    
+        width: $container-maxWidthMobile;
+    }
+}

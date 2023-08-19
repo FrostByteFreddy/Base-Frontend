@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/App.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <header data-state="maximized">
+        <nav>
+            <a href="#" class="nav-logo">
+                <img class="nav-logo-img" src="https://symbols.getvecta.com/stencil_25/77_sass.57898c574e.svg" alt="SASS Logo" />
+            </a>
+    
+            <ul class="nav-menu-links">
+                <li class="nav-menu-link"><a href="products">Products</a></li>
+                <li class="nav-menu-link"><a href="about">About</a></li>
+                <li class="nav-menu-link"><a href="contact">Contact</a></li>
+                <li class="nav-menu-link"><a class="btn primary">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero background-primary-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <h1>Welcome To The Preview!</h1>
+                        <p class="lead">Discover a streamlined SCSS structure designed for modern web development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-before-large space-after-large">
+            <div class="container">
+                <h2>Colors And Their Variables</h2>
+                <div class="row gy-3">
+                    <div class="col-2 background-primary"><p class="text-center color-white">$clr-primary</p></div>
+                    <div class="col-2 background-secondary"><p class="text-center color-white">$clr-secondary</p></div>
+                    <div class="col-2 background-tertiary"><p class="text-center color-white">$clr-tertiary</p></div>
+                    <div class="col-2 background-quaternary"><p class="text-center color-white">$clr-quaternary</p></div>
+                    <div class="col-2 background-quinary"><p class="text-center color-white">$clr-quinary</p></div>
+                    <div class="col-2 background-black"><p class="text-center color-white">$clr-black</p></div>
+                </div>
+                <div class="row gy-3">
+                    <div class="col-2 background-primary-light"><p class="text-center color-white">$clr-primaryLight</p></div>
+                    <div class="col-2 background-secondary-light"><p class="text-center color-white">$clr-secondaryLight</p></div>
+                    <div class="col-2 background-tertiary-light"><p class="text-center color-white">$clr-tertiaryLight</p></div>
+                    <div class="col-2 background-quaternary-light"><p class="text-center color-white">$clr-quaternaryLight</p></div>
+                    <div class="col-2 background-quinary-light"><p class="text-center color-white">$clr-quinaryLight</p></div>
+                    <div class="col-2 background-white"><p class="text-center color-black">$clr-white</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-before-large space-after-large">
+            <div class="container">
+
+                <h2>Button Components inside of a grid</h2>
+                <p>These are the button components wrapped in a grid. <br>To adjust their appearance, edit the variables accordingly</p>
+
+                <div class="row gx-3 gy-3">
+
+                    <div class="col-3"><a href="#" class="btn">Default Button</a></div>
+                    <div class="col-3"><a href="#" class="btn primary">Primary Button</a></div>
+                    <div class="col-3"><a href="#" class="btn secondary">Secondary Button</a></div>
+                    <div class="col-3"><a href="#" class="btn tertiary">Tertiary Button</a></div>
+
+                    <div class="col-3">Adjust the <strong>$btn-default</strong> variables.</div>
+                    <div class="col-3">Adjust the $btn-primary variables.</div>
+                    <div class="col-3">Adjust the $btn-secondary variables.</div>
+                    <div class="col-3">Adjust the $btn-tertiary variables.</div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

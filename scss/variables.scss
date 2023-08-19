@@ -1,0 +1,228 @@
+///////////////////////////////////////////////
+// Colors and Fonts
+///////////////////////////////////////////////
+
+$clr-black: #000000;
+$clr-white: #ffffff;
+$clr-transparent: transparent;
+
+// Colors (prefix clr)
+$clr-primary: #CD6799; 
+$clr-secondary: #CD9E67; 
+$clr-tertiary: #67CD9E;  
+$clr-quaternary: #679ECD;
+$clr-quinary: #7206d1; 
+
+// Lighter shades (might result in white if the percentage is too hight)
+$clr-primaryLight: lighten($clr-primary, 20%);
+$clr-secondaryLight: lighten($clr-secondary, 20%);
+$clr-tertiaryLight: lighten($clr-tertiary, 20%);
+$clr-quaternaryLight: lighten($clr-quaternary, 20%);
+$clr-quinaryLight: lighten($clr-quinary, 20%);
+
+// Font-Families (prefix ff)
+$ff-main: 'Montserrat';
+$ff-secondary: 'Raleway';
+$ff-fontawesome: 'Fontawesome 5';
+
+// Background-Color for body
+$body-backgroundColor: $clr-white;
+
+///////////////////////////////////////////////
+// Layout related
+///////////////////////////////////////////////
+
+$breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Spacing Variables for Grids (.row > .col-x)
+$grid-spacing: (
+  0: 0rem,
+  1: 0.5rem,
+  2: 1rem,
+  3: 2rem,
+  4: 3rem,
+  5: 6rem
+);
+
+// Spaces for "space-after" and "space-before"
+$vertical-spacing: (
+  none: 0,
+  extra-small: 1rem,    
+  small: 2rem,     
+  medium: 4rem,     
+  large: 6rem,     
+  extra-large: 8rem
+);
+
+// Section-Backgroundcolors
+$colors: (
+  'black': $clr-black,
+  'white': $clr-white,
+  'primary': $clr-primary,
+  'secondary': $clr-secondary,
+  'tertiary': $clr-tertiary,
+  'quaternary': $clr-quaternary,
+  'quinary': $clr-quinary,
+
+  'primary-light': $clr-primaryLight,
+  'secondary-light': $clr-secondaryLight,
+  'tertiary-light': $clr-tertiaryLight,
+  'quaternary-light': $clr-quaternaryLight,
+  'quinary-light': $clr-quinaryLight
+);
+
+// Containers
+$container-padding: 20px;
+$container-maxWidthDesktop: 1160px;
+$container-maxWidthMobile: calc(100vw - 2 * #{$container-padding});
+
+// Sections
+$section-heroVerticalPadding: 40px;
+$section-heroHeight: 100svh;
+
+///////////////////////////////////////////////
+// Headings (prefix tag)
+///////////////////////////////////////////////
+
+// Global for all Headings
+$headings-lineHeight: 1.25;
+$headings-marginTop: 2rem;
+$headings-marginBottom: 1rem;
+
+// Heading 1
+$h1-color: $clr-quinary;
+$h1-fontSize: 3.375rem;
+$h1-fontWeight: bold;
+$h1-lineHeight: $headings-lineHeight;
+$h1-fontFamily: $ff-main;
+
+// Heading 2
+$h2-color: $clr-quinary;
+$h2-fontSize: 2.625rem;
+$h2-fontWeight: normal;
+$h2-lineHeight: $headings-lineHeight;
+$h2-fontFamily: $ff-main;
+
+// Heading 3
+$h3-color: $clr-quinary;
+$h3-fontSize: 1.875rem;
+$h3-fontWeight: bold;
+$h3-lineHeight: $headings-lineHeight;
+$h3-fontFamily: $ff-main;
+
+// Heading 4
+$h4-color: $clr-quinary;
+$h4-fontSize: 1.65rem;
+$h4-fontWeight: normal;
+$h4-lineHeight: $headings-lineHeight;
+$h4-fontFamily: $ff-main;
+
+
+///////////////////////////////////////////////
+// Transitions
+///////////////////////////////////////////////
+
+$transition-fast: 150ms;
+$transition-medium: 300ms;
+$transition-long: 500ms;
+
+
+///////////////////////////////////////////////
+// Typography
+///////////////////////////////////////////////
+
+// Paragraphs (prefix p)
+$p-color: $clr-black;
+$p-fontSize: 1rem; // 16px
+$p-lineHeight: 1.5;
+$p-fontWeight: normal;
+$p-fontFamily: $ff-main;
+$p-consecutiveMarginTop: 1rem; // p + p
+
+$p-lead-fontSize: calc(#{$p-fontSize * 1.75});
+$p-lead-fontWeight: normal;
+$p-lead-color: $clr-quinary;
+
+// Buttons (prefix btn)
+$btn-default-fontSize: 1rem; // 16px
+$btn-default-lineHeight: 1;
+$btn-default-fontWeight: 500;
+$btn-default-padding: .85rem 1.5rem;
+$btn-default-color: $clr-black;
+$btn-default-backgroundColor: $clr-tertiary; 
+
+$btn-default-paddingWithButtonIcon: 3.5rem;
+$btn-default-transition: color $transition-fast, background-color $transition-fast;
+$btn-default-borderRadius: .5rem;
+
+// Primary Button
+$btn-primary-color: $clr-white;
+$btn-primary-backgroundColor: $clr-primary;
+// ....
+
+// Secondary Button
+$btn-secondary-color: $clr-white;
+$btn-secondary-backgroundColor: $clr-secondary;
+// ....
+
+// Tertiary Button
+$btn-tertiary-color: $clr-white;
+$btn-tertiary-backgroundColor: $clr-quinary;
+// ....
+
+// Quaternary Button
+// Quinary Button
+
+
+///////////////////////////////////////////////
+// Icons
+///////////////////////////////////////////////
+
+// Add your font-awesome codes here, then use "icon-bell" etc.
+$icons: (
+  "bell": "f123",
+  "calendar": "f123",
+  "clock": "f089",
+  "someIcon": "f123",
+);
+
+
+///////////////////////////////////////////////
+// Navigation
+///////////////////////////////////////////////
+
+// <header>
+$header-heightDesktopMaximized: 110px;
+$header-heightDesktopMinimized: 90px;
+
+$header-heightMobileMaximized: 90px;
+$header-heightMobileMinimized: 75px;
+
+$header-heightTransitionSpeed: $transition-medium;
+// <nav>
+$navbar-verticalLogoPadding: 15%;
+$navbar-backgroundColor: $clr-black;
+
+// This needs to be uncommented if it is used => atoms/header.scss
+$navbar-shadowColor: $clr-primaryLight;
+$navbar-shadowOpacityHex: FF;
+$navbar-boxShadowBottom: 0 0px 30px #{$navbar-shadowColor}#{$navbar-shadowOpacityHex};
+
+// Navbar Links
+$navbar-linkFontSize: 1.25rem;
+$navbar-linkFontFamily: $ff-main;
+$navbar-linkColor: $clr-white;
+$navbar-linkFontWeight: normal;
+$navbar-linkPadding: .75rem 1.5rem;
+$navbar-buttonOffsetLeft: 1.5rem;
+
+///////////////////////////////////////////////
+// Forms
+///////////////////////////////////////////////

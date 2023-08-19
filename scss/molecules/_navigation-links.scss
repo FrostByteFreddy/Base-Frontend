@@ -1,0 +1,38 @@
+.nav-menu {
+
+    &-links {
+
+        all: unset;
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+
+        li {
+
+            a {
+
+                font-size: $navbar-linkFontSize;
+                font-weight: $navbar-linkFontWeight;
+                font-family: $navbar-linkFontFamily;
+                line-height: 1;
+            }
+
+            // Normal Links
+            a:not(.btn) {
+
+                padding: $navbar-linkPadding;
+                color: $navbar-linkColor;
+
+                // Add a bit of top offset to center it correctly
+                position: relative;
+                top: 2px;
+            }
+
+            // Call to Action
+            a.btn {
+
+                margin-left: $navbar-buttonOffsetLeft;
+            }
+        }
+    }
+}

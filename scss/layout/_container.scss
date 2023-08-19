@@ -1,0 +1,21 @@
+///////////////////////////////////////////////
+// Containers
+///////////////////////////////////////////////
+
+.container {
+
+    width: $container-maxWidthDesktop;
+    margin: auto;
+    padding: 0 $container-padding;
+    overflow: hidden;
+
+    &-fluid {
+
+        width: 100%;
+    }
+
+    @include below('xl') {
+
+        max-width: $container-maxWidthMobile;
+    }
+}

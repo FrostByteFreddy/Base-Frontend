@@ -1,0 +1,16 @@
+//////////////////////////////////////////////////////////
+// Create classes for vertical spacing between sections
+//////////////////////////////////////////////////////////
+
+@each $name, $size in $vertical-spacing {
+
+    .space-after-#{$name} {
+
+        padding-bottom: $size;
+    }
+  
+    .space-before-#{$name} {
+
+        padding-top: $size;
+    }
+}  

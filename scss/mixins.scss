@@ -1,0 +1,159 @@
+///////////////////////////////////////////////
+// Media Queries
+///////////////////////////////////////////////
+
+// Below a certain breakpoint
+@mixin below($breakpoint) {
+
+    @if map-has-key($breakpoints, $breakpoint) {
+
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+        @media (max-width: $breakpoint-value) {
+
+            @content;
+        }
+    } @else {
+
+        @warn "Invalid breakpoint: #{$breakpoint}.";
+    }
+}
+
+// Above a certain breakpoint
+@mixin above($breakpoint) {
+
+    @if map-has-key($breakpoints, $breakpoint) {
+
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+        @media (min-width: $breakpoint-value) {
+
+            @content;
+        }
+    } @else {
+
+        @warn "Invalid breakpoint: #{$breakpoint}.";
+    }
+}
+
+// Between two certain breakpoints (dont use this if possible)
+@mixin between($lower, $upper) {
+
+    @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+
+        $lower-value: map-get($breakpoints, $lower);
+        $upper-value: map-get($breakpoints, $upper);
+        @media (min-width: $lower-value) and (max-width: $upper-value) {
+
+            @content;
+        }
+    } @else {
+
+        @warn "Invalid breakpoint(s): #{$lower}, #{$upper}.";
+    }
+}
+
+
+///////////////////////////////////////////////
+// Absolute Positioning 
+///////////////////////////////////////////////
+
+// Position an element inside a relative container
+@mixin position-absolute($vertical, $horizontal) {
+
+    position: absolute;
+
+    @if $vertical == 'Top' {
+
+        top: 0;
+    } @else if $vertical == 'Center' {
+
+        top: 50%;
+    } @else if $vertical == 'Bottom' {
+
+        bottom: 0;
+    }
+
+    @if $horizontal == 'Left' {
+
+        left: 0;
+    } @else if $horizontal == 'Center' {
+
+        left: 50%;
+    } @else if $horizontal == 'Right' {
+
+        right: 0;
+    }
+
+    @if $vertical == 'Center' and $horizontal == 'Center' {
+
+        transform: translate(-50%, -50%);
+    } @else if $vertical == 'Center' {
+
+        transform: translateY(-50%);
+    } @else if $horizontal == 'Center' {
+
+        transform: translateX(-50%);
+    }
+}
+
+
+///////////////////////////////////////////////
+// Background Images
+///////////////////////////////////////////////
+
+// Background image Contain / Cover
+@mixin background-image($size) {
+
+    background-size: $size;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+///////////////////////////////////////////////
+// Icons
+///////////////////////////////////////////////
+
+// Icon positioning on left or right
+@mixin icon($position) {
+
+    position: absolute;
+    #{$position}: calc(#{$btn-default-paddingWithButtonIcon} / 3.4);
+    top: 50%;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+
+    font-family: $ff-fontawesome;
+    color: inherit;
+    font-size: inherit;
+}
+
+// Assign content property from $icons map
+@mixin icons($icons) {
+
+    .icon {
+
+        @each $name, $content in $icons {
+
+            &-#{$name}::after {
+                
+                content: $content;
+            }
+        }
+    }
+}
+@include icons($icons);
+
+
+// Background Colors and Colors
+@each $name, $color in $colors {
+
+    .background-#{$name} {
+
+        background-color: $color;
+    }
+
+    .color-#{$name} {
+
+        color: $color;
+    }
+}

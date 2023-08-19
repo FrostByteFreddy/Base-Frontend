@@ -1,0 +1,35 @@
+///////////////////////////////////////////////
+// Navigation Wrapper <header>
+///////////////////////////////////////////////
+
+header {
+
+    // Desktop
+    height: $header-heightDesktopMaximized;
+    transition: height $header-heightTransitionSpeed ease;
+    width: 100%;
+    position: fixed;
+    top: 0;
+
+    // Background Color / Box Shadow
+    background-color: $navbar-backgroundColor;
+    box-shadow: $navbar-boxShadowBottom;
+
+    // Minimized state Desktop
+    &[data-state="minimized"] {
+
+        height: $header-heightDesktopMinimized;
+    }
+
+    // Mobile
+    @include below('md') {
+
+        height: $header-heightMobileMaximized;
+
+        // Minimized state Mobile
+        &[data-state="minimized"] {
+
+            height: $header-heightMobileMinimized;
+        }
+    }
+}

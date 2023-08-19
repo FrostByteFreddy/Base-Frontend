@@ -1,0 +1,19 @@
+///////////////////////////////////////////////
+// Navigation Logo
+///////////////////////////////////////////////
+
+.nav {
+
+    &-logo { 
+
+        width: auto;
+        height: calc(100% - calc(2 * #{$navbar-verticalLogoPadding}));
+        padding: $navbar-verticalLogoPadding 0;
+
+        &-img {
+
+            height: 100%;
+            width: auto;
+        }
+    }
+}

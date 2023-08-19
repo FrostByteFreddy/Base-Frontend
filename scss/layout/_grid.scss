@@ -1,0 +1,104 @@
+///////////////////////////////////////////////
+// Simplified Version of Bootstrap Grid
+///////////////////////////////////////////////
+
+// Row Classes with Spacing
+.row {
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    // Set the custom property to the default gutter size.
+    --gutter-x: #{map-get($grid-spacing, 0)};
+    --gutter-y: #{map-get($grid-spacing, 0)};
+
+    margin-right: calc(var(--gutter-x) * -.5);
+    margin-left: calc(var(--gutter-x) * -.5);
+  
+    @each $index, $size in $grid-spacing {
+
+        &.gx-#{$index} {
+            --gutter-x: #{$size};
+        }
+
+        &.gy-#{$index} {
+            --gutter-y: #{$size};
+        }   
+    }
+}
+  
+// Column Classes
+@for $i from 1 through 12 {
+
+    .col-#{$i} { 
+
+        flex: 0 0 calc((100% / 12 * $i) - var(--gutter-x)); 
+        max-width: calc((100% / 12 * $i) - var(--gutter-x)); 
+
+        padding-right: calc(var(--gutter-x) * .5);
+        padding-left: calc(var(--gutter-x) * .5);
+        
+        padding-top: calc(var(--gutter-y) * .5);
+        padding-bottom: calc(var(--gutter-y) * .5);
+    }
+
+    @include above('sm') {
+        
+        .col-sm-#{$i} {
+
+            flex: 0 0 calc((100% / 12 * $i) - var(--gutter-x)); 
+            max-width: calc((100% / 12 * $i) - var(--gutter-x)); 
+
+            padding-right: calc(var(--gutter-x) * .5);
+            padding-left: calc(var(--gutter-x) * .5);
+
+            padding-top: calc(var(--gutter-y) * .5);
+            padding-bottom: calc(var(--gutter-y) * .5);
+        }
+    }
+
+    @include above('md') {
+
+        .col-md-#{$i} {
+
+            flex: 0 0 calc((100% / 12 * $i) - var(--gutter-x)); 
+            max-width: calc((100% / 12 * $i) - var(--gutter-x)); 
+
+            padding-right: calc(var(--gutter-x) * .5);
+            padding-left: calc(var(--gutter-x) * .5);
+
+            padding-top: calc(var(--gutter-y) * .5);
+            padding-bottom: calc(var(--gutter-y) * .5);
+        }
+    }
+
+    @include above('lg') {
+
+        .col-lg-#{$i} {
+
+            flex: 0 0 calc((100% / 12 * $i) - var(--gutter-x)); 
+            max-width: calc((100% / 12 * $i) - var(--gutter-x)); 
+
+            padding-right: calc(var(--gutter-x) * .5);
+            padding-left: calc(var(--gutter-x) * .5);
+
+            padding-top: calc(var(--gutter-y) * .5);
+            padding-bottom: calc(var(--gutter-y) * .5);
+        }
+    }
+
+    @include above('xl') {
+
+        .col-xl-#{$i} {
+            
+            flex: 0 0 calc((100% / 12 * $i) - var(--gutter-x)); 
+            max-width: calc((100% / 12 * $i) - var(--gutter-x)); 
+
+            padding-right: calc(var(--gutter-x) * .5);
+            padding-left: calc(var(--gutter-x) * .5);
+
+            padding-top: calc(var(--gutter-y) * .5);
+            padding-bottom: calc(var(--gutter-y) * .5);
+        }
+    }
+}
