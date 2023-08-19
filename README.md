@@ -27,6 +27,10 @@ npm start
 - **SCSS**: Modify `variables.scss` for global style changes.
 - **JavaScript**: Add or modify functionalities in the main JS file under the `js` directory.
 
+## Preview Your Changes
+
+If you're in the early stages of defining your project's styles, you can track your progress by opening preview.html.
+
 ## Contributing
 
 Feel free to contribute. Ensure to follow the established coding standards.
