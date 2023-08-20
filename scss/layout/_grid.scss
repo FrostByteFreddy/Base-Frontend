@@ -41,7 +41,10 @@
         padding-top: calc(var(--gutter-y) * .5);
         padding-bottom: calc(var(--gutter-y) * .5);
     }
+}
 
+@for $i from 1 through 12 {
+    
     @include above('sm') {
         
         .col-sm-#{$i} {
@@ -56,6 +59,9 @@
             padding-bottom: calc(var(--gutter-y) * .5);
         }
     }
+}
+
+@for $i from 1 through 12 {
 
     @include above('md') {
 
@@ -71,6 +77,9 @@
             padding-bottom: calc(var(--gutter-y) * .5);
         }
     }
+}
+
+@for $i from 1 through 12 {
 
     @include above('lg') {
 
@@ -86,6 +95,9 @@
             padding-bottom: calc(var(--gutter-y) * .5);
         }
     }
+}
+
+@for $i from 1 through 12 {
 
     @include above('xl') {
 

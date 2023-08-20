@@ -4,8 +4,8 @@
 
 section {
 
-    // Hero Section
-    &.hero {
+    // Hero Section Template
+    &[data-component="hero"] {
 
         // Caluclate height for Desktop
         $section-heroActualHeightDesktop: calc((#{$section-heroHeight} - 2 * #{$section-heroVerticalPadding}) - #{$header-heightDesktopMaximized});

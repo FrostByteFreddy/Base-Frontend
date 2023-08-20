@@ -157,3 +157,37 @@
         color: $color;
     }
 }
+
+// Margin classes
+@each $name, $margin in $margins {
+
+    // Margin-top
+    .mt-#{$name} {
+
+        margin-top: #{$margin}
+    }
+
+     // Margin-right
+     .mr-#{$name} {
+
+        margin-right: #{$margin}
+    }
+
+     // Margin-bottom
+     .mb-#{$name} {
+
+        margin-bottom: #{$margin}
+    }
+
+     // Margin-left
+     .ml-#{$name} {
+
+        margin-left: #{$margin}
+    }
+
+     // Margin on all sides
+     .m-#{$name} {
+
+        margin: #{$margin}
+    }
+}

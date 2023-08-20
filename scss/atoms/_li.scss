@@ -1,4 +1,28 @@
 li {
 
+    // Dont to this for the navigation
+    &:not(.nav-menu-link) {
+
+        position: relative;
+        padding-left: $li-paddingLeft;
     
+        & + li {
+    
+            margin-top: $li-verticalPadding;
+        }
+    
+        &::before {
+            
+            content: "";
+            position: absolute;
+            left: $li-listIconLeftOffset;
+            top: 50%;
+            height: $li-listIconDiameter;
+            width: $li-listIconDiameter;
+    
+            transform: translateY(-50%);
+            background-color: $li-listIconColor;
+            border-radius: 50%;
+        }
+    }
 }

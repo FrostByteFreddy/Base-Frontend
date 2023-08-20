@@ -61,6 +61,17 @@ $vertical-spacing: (
   extra-large: 8rem
 );
 
+// The margin (use mt-1 / mr-1 / mb-1 / ml-1)
+$margins: (
+  0: 0rem,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 2rem,
+  6: 4rem
+);
+
 // Section-Backgroundcolors
 $colors: (
   'black': $clr-black,
@@ -193,6 +204,19 @@ $icons: (
   "someIcon": "f123",
 );
 
+///////////////////////////////////////////////
+// Lists
+///////////////////////////////////////////////
+
+$ul-color: $clr-black;
+$ul-fontSize: 1.25rem;
+$ul-fontWeight: normal;
+
+$li-verticalPadding: .5rem;
+$li-paddingLeft: 1.35rem;
+$li-listIconColor: $clr-quinary;
+$li-listIconDiameter: .5rem;
+$li-listIconLeftOffset: .2rem;
 
 ///////////////////////////////////////////////
 // Navigation

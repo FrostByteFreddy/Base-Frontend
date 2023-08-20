@@ -1,4 +1,10 @@
 ul {
 
-    
+    font-size: $ul-fontSize;
+    font-weight: $ul-fontWeight;
+    color: $ul-color;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
