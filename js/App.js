@@ -1,7 +1,5 @@
 (function($) {
 
-    console.log("test");
-
     var MAIN = MAIN || {},
 
     MAIN = {
