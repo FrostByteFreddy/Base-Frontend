@@ -29,7 +29,7 @@ npm start
 
 ## Preview Your Changes
 
-If you're in the early stages of defining your project's styles, you can track your progress by opening preview.html.
+We utilize BrowserSync for seamless real-time updates whenever asset files undergo changes. When you run 'npm start', a browser window will automatically launch, presenting you with the live preview.
 
 ## Contributing
 
