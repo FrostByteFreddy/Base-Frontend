@@ -1,8 +1,10 @@
 {
   "devDependencies": {
+    "browser-sync": "^2.29.3",
     "concurrently": "^6.4.0",
     "javascript-obfuscator": "^4.0.2",
     "nodemon": "^3.0.1",
+    "open-cli": "^7.2.0",
     "sass": "^1.45.0",
     "terser": "^5.10.0"
   },
@@ -11,6 +13,7 @@
     "minify-obfuscate": "terser js/App.js -o assets/js/App.min.js && javascript-obfuscator assets/js/App.min.js --output assets/js/App.js && rm assets/js/App.min.js",
     "watch:scss": "nodemon -e scss -x \"npm run sass\"",
     "watch:js": "nodemon -e js -x \"npm run minify-obfuscate\"",
-    "start": "concurrently \"npm:watch:scss\" \"npm:watch:js\""
+    "start": "concurrently \"npm:watch:scss\" \"npm:watch:js\" \"npm:serve\"",
+    "serve": "browser-sync start --server --files 'assets/css/*.css, assets/js/*.js, assets/preview.html' --startPath 'assets/preview.html'"
   }
 }
