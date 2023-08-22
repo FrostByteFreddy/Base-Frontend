@@ -1,0 +1,22 @@
+name: Deploy to Dev
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to Dev
+      env:
+        HOST: ${{ secrets.DEV_HOST }}
+        USER: ${{ secrets.DEV_USER }}
+        TARGET: ${{ secrets.DEV_TARGETDIRECTORY }}
+      run: |
+        rsync -avz -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" --delete ./ $USER@$HOST:$TARGET
