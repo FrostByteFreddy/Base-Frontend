@@ -3,6 +3,7 @@
     "browser-sync": "^2.29.3",
     "concurrently": "^6.4.0",
     "javascript-obfuscator": "^4.0.2",
+    "mkdirp": "^3.0.1",
     "nodemon": "^3.0.1",
     "open-cli": "^7.2.0",
     "sass": "^1.45.0",
@@ -11,8 +12,9 @@
   "scripts": {
     "sass": "sass --watch scss/main.scss:assets/css/style.css",
     "minify-obfuscate": "terser js/App.js -o assets/js/App.min.js && javascript-obfuscator assets/js/App.min.js --output assets/js/App.js",
+    "prebuild": "mkdirp assets/js/",
     "build:scss": "sass scss/main.scss:assets/css/style.css",
-    "build": "npm run build:scss && npm run minify-obfuscate",
+    "build": "npm run prebuild && npm run build:scss && npm run minify-obfuscate",
     "watch:scss": "nodemon -e scss -x \"npm run sass\"",
     "watch:js": "nodemon -e js -x \"npm run minify-obfuscate\"",
     "start": "concurrently \"npm:watch:scss\" \"npm:watch:js\" \"npm:serve\"",
