@@ -225,11 +225,12 @@ $li-listIconLeftOffset: .2rem;
 // <header>
 $header-heightDesktopMaximized: 110px;
 $header-heightDesktopMinimized: 90px;
-
 $header-heightMobileMaximized: 90px;
 $header-heightMobileMinimized: 75px;
+$header-hideOnScroll: 'yes';
 
-$header-heightTransitionSpeed: $transition-medium;
+$header-heightTransitionSpeed: $transition-fast;
+
 // <nav>
 $navbar-verticalLogoPadding: 15%;
 $navbar-backgroundColor: $clr-black;
@@ -246,6 +247,14 @@ $navbar-linkColor: $clr-white;
 $navbar-linkFontWeight: normal;
 $navbar-linkPadding: .75rem 1.5rem;
 $navbar-buttonOffsetLeft: 1.5rem;
+
+// Mobile Burger
+$navbar-burgerMenuBreakpoint: 'md';
+$navbar-burgerMenuWidth: 4rem;
+$navbar-burgerMenuHeight: 2.75rem;
+$navbar-burgerMenuBarHeight: .4rem;
+$navbar-burgerMenuBarColor: $clr-primary;
+$navbar-burgerMenuBarBorderRadius: .2rem;
 
 ///////////////////////////////////////////////
 // Forms

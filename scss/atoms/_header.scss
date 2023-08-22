@@ -6,7 +6,7 @@ header {
 
     // Desktop
     height: $header-heightDesktopMaximized;
-    transition: height $header-heightTransitionSpeed ease;
+    transition: height $header-heightTransitionSpeed ease-out, top $header-heightTransitionSpeed ease-out;
     width: 100%;
     position: fixed;
     top: 0;
@@ -20,17 +20,28 @@ header {
     &[data-state="minimized"] {
 
         height: $header-heightDesktopMinimized;
+
+        @if $header-hideOnScroll == 'yes' {
+
+            top: -$header-heightDesktopMinimized;
+        }
     }
 
     // Mobile
     @include below('md') {
 
         height: $header-heightMobileMaximized;
+        top: 0;
 
         // Minimized state Mobile
         &[data-state="minimized"] {
 
             height: $header-heightMobileMinimized;
+
+            @if $header-hideOnScroll == 'yes' {
+
+                top: -$header-heightMobileMinimized;
+            }
         }
     }
 }

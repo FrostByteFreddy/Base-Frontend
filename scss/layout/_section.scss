@@ -4,26 +4,6 @@
 
 section {
 
-    // Hero Section Template
-    &[data-component="hero"] {
-
-        // Caluclate height for Desktop
-        $section-heroActualHeightDesktop: calc((#{$section-heroHeight} - 2 * #{$section-heroVerticalPadding}) - #{$header-heightDesktopMaximized});
-        min-height: $section-heroActualHeightDesktop;
-
-        // Calucalate height on mobile
-        @include below('md') {
-
-            $section-heroActualHeightMobile: calc(#{$section-heroHeight} - 2 * #{$section-heroVerticalPadding} - #{$header-heightMobileMaximized});
-            min-height: $section-heroActualHeightMobile;
-        }
-        
-        padding: $section-heroVerticalPadding 0;
-
-        display: flex;
-        align-items: center;
-    }
-
     // Space Before
     @each $name, $size in $vertical-spacing {
 
