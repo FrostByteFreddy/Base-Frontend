@@ -26,13 +26,11 @@ jobs:
         USER: ${{ secrets.DEV_USER }}
         TARGET: ${{ secrets.DEV_TARGETDIRECTORY }}
       run: |
+
         npm install
+        npm build
+        echo "Compiled assets..."
 
-        echo "Compile assets"
-        sass --watch scss/main.scss:assets/css/style.css
-        terser js/App.js -o assets/js/App.min.js && javascript-obfuscator assets/js/App.min.js --output assets/js/App.js
-
-        echo "Remove unneeded code..."
         rm -rf node_modules
         rm package.json
         rm -rf scss/
@@ -42,5 +40,5 @@ jobs:
         rm .gitignore
         rm README.md
 
-        echo "Uploading files..."
+        echo "Uploading files..." 
         rsync -avz -e "ssh -i deploy_key -o StrictHostKeyChecking=no" --delete ./ $USER@$HOST:$TARGET
