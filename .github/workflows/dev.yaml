@@ -1,4 +1,4 @@
-name: Deploy to Dev
+name: Deploy to Server
 
 on:
   push:
@@ -13,10 +13,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Deploy to Dev
+    - name: Set up SSH key
+      env:
+        DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+      run: |
+        echo "$DEPLOY_SSH_KEY" > deploy_key
+        chmod 600 deploy_key
+
+    - name: Deploy to server
       env:
         HOST: ${{ secrets.DEV_HOST }}
         USER: ${{ secrets.DEV_USER }}
         TARGET: ${{ secrets.DEV_TARGETDIRECTORY }}
       run: |
-        rsync -avz -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" --delete ./ $USER@$HOST:$TARGET
+        rsync -avz -e "ssh -i deploy_key -o StrictHostKeyChecking=no" --delete ./ $USER@$HOST:$TARGET
