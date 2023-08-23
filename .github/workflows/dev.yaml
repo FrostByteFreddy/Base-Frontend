@@ -17,8 +17,8 @@ jobs:
       env:
         DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
       run: |
-        echo "$DEPLOY_SSH_KEY" > deploy_key
-        chmod 600 deploy_key
+        eval "$(ssh-agent -s)"
+        ssh-add - <<< "$DEPLOY_SSH_KEY"
 
     - name: Deploy to server
       env:
@@ -26,19 +26,17 @@ jobs:
         USER: ${{ secrets.DEV_USER }}
         TARGET: ${{ secrets.DEV_TARGETDIRECTORY }}
       run: |
-
         npm install
         npm run build
         echo "Compiled assets..."
 
         rm -rf node_modules
         rm package.json
-        rm -rf scss/
-        rm -rf js/
+        rm package-lock.json
         rm -rf .github/
         rm -rf .git/
         rm .gitignore
         rm README.md
 
         echo "Uploading files..." 
-        rsync -avz -e "ssh -i deploy_key -o StrictHostKeyChecking=no" --delete ./ $USER@$HOST:$TARGET
+        rsync -avz -e "ssh -o StrictHostKeyChecking=no" --delete ./ $USER@$HOST:$TARGET
