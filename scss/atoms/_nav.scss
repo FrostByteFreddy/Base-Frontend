@@ -4,16 +4,41 @@
 
 nav {
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     height: 100%;
     width: $container-maxWidthDesktop;
-    margin: auto;
 
-     // Limit width to some viewport width instead of px
     @include below('xl') {
-    
+        
         width: $container-maxWidthMobile;
+    }
+
+    // Desktop & Mobile Nav
+    [data-device="desktop"],
+    [data-device="mobile"] {
+
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        height: 100%;
+    }
+
+    [data-device="desktop"] {
+
+        display: flex;
+
+        @include below($navbar-burgerMenuBreakpoint) {
+
+            display: none;
+        }
+    }
+
+    [data-device="mobile"] {
+        
+        display: none;
+
+        @include below($navbar-burgerMenuBreakpoint) {
+
+            display: flex;
+        }
     }
 }

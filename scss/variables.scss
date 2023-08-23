@@ -230,12 +230,13 @@ $li-listIconLeftOffset: .2rem;
 
 // <header>
 $header-heightDesktopMaximized: 110px;
-$header-heightDesktopMinimized: 90px;
+$header-heightDesktopMinimized: 110px;
+$header-heightMobileMaximized: 70px;
+$header-heightMobileMinimized: 70px;
+$header-hideOnScroll: 'yes';
 
-$header-heightMobileMaximized: 90px;
-$header-heightMobileMinimized: 75px;
+$header-heightTransitionSpeed: $transition-fast;
 
-$header-heightTransitionSpeed: $transition-medium;
 // <nav>
 $navbar-verticalLogoPadding: 15%;
 $navbar-backgroundColor: $clr-black;
@@ -252,6 +253,14 @@ $navbar-linkColor: $clr-white;
 $navbar-linkFontWeight: normal;
 $navbar-linkPadding: .75rem 1.5rem;
 $navbar-buttonOffsetLeft: 1.5rem;
+
+// Mobile Burger
+$navbar-burgerMenuBreakpoint: 'md';
+$navbar-burgerMenuWidth: 3rem;
+$navbar-burgerMenuHeight: 2rem;
+$navbar-burgerMenuBarHeight: .3rem;
+$navbar-burgerMenuBarColor: $clr-primary;
+$navbar-burgerMenuBarBorderRadius: .2rem;
 
 ///////////////////////////////////////////////
 // Forms

@@ -1,0 +1,41 @@
+.burger-menu {
+
+    position: relative;
+    height: $navbar-burgerMenuHeight;
+    width: $navbar-burgerMenuWidth;
+    margin: auto 0;
+
+    display: flex;
+    align-items: center;
+
+    &-bar {
+
+        position: absolute;
+        display: block;
+        height: $navbar-burgerMenuBarHeight;
+        background-color: $navbar-burgerMenuBarColor;
+        border-radius: $navbar-burgerMenuBarBorderRadius;
+
+        left: 0;
+        right: 0;
+
+        // Top bar
+        &[data-id="1"] {
+
+            top: 0;
+        }
+
+        // Center bar
+        &[data-id="2"] {
+
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        // Bottom bar
+        &[data-id="3"] {
+
+            bottom: 0;
+        }
+    }
+}

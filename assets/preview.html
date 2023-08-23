@@ -13,22 +13,46 @@
 <body>
 
     <header data-state="maximized">
-        <nav>
-            <a href="#" class="nav-logo">
-                <img class="nav-logo-img" src="https://symbols.getvecta.com/stencil_25/77_sass.57898c574e.svg" alt="SASS Logo" />
-            </a>
+        <nav class="container">
+
+            <div data-device="desktop">
+                <a href="#" class="nav-logo">
+                    <img class="nav-logo-img" src="https://symbols.getvecta.com/stencil_25/77_sass.57898c574e.svg" alt="SASS Logo" />
+                </a>
+        
+                <ul class="nav-menu-links">
+                    <li class="nav-menu-link"><a href="products">Products</a></li>
+                    <li class="nav-menu-link"><a href="about">About</a></li>
+                    <li class="nav-menu-link"><a href="contact">Contact</a></li>
+                    <li class="nav-menu-link"><a class="btn primary">Login</a></li>
+                </ul>
+            </div>
     
-            <ul class="nav-menu-links">
-                <li class="nav-menu-link"><a href="products">Products</a></li>
-                <li class="nav-menu-link"><a href="about">About</a></li>
-                <li class="nav-menu-link"><a href="contact">Contact</a></li>
-                <li class="nav-menu-link"><a class="btn primary">Login</a></li>
-            </ul>
+            <div data-device="mobile">
+
+                <a href="#" class="nav-logo">
+                    <img class="nav-logo-img" src="https://symbols.getvecta.com/stencil_25/77_sass.57898c574e.svg" alt="SASS Logo" />
+                </a>
+                
+                <div class="burger-menu">
+                    <span data-id="1" class="burger-menu-bar"></span>
+                    <span data-id="2" class="burger-menu-bar"></span>
+                    <span data-id="3" class="burger-menu-bar"></span>
+                </div>
+                
+                <ul class="nav-menu-links-mobile hidden">
+                    <li class="nav-menu-link"><a href="products">Products</a></li>
+                    <li class="nav-menu-link"><a href="about">About</a></li>
+                    <li class="nav-menu-link"><a href="contact">Contact</a></li>
+                    <li class="nav-menu-link"><a class="btn primary">Login</a></li>
+                </ul>
+            </div>
+
         </nav>
     </header>
 
     <main>
-        <section data-component="hero" class="background-primary-light">
+        <section data-component="hero" class="background-tertiary-light">
             <div class="container">
                 <div class="row">
                     <div class="col-8">
