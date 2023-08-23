@@ -5,4 +5,5 @@ body {
     margin: 0;
     background-color: $body-backgroundColor;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }

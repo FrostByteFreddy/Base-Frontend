@@ -16,10 +16,29 @@ nav {
     [data-device="desktop"],
     [data-device="mobile"] {
 
-        display: flex;
         justify-content: space-between;
         align-items: center;
         margin: auto;
         height: 100%;
+    }
+
+    [data-device="desktop"] {
+
+        display: flex;
+
+        @include below($navbar-burgerMenuBreakpoint) {
+
+            display: none;
+        }
+    }
+
+    [data-device="mobile"] {
+        
+        display: none;
+
+        @include below($navbar-burgerMenuBreakpoint) {
+
+            display: flex;
+        }
     }
 }
