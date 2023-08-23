@@ -161,6 +161,12 @@ $p-lead-fontSize: calc(#{$p-fontSize * 1.75});
 $p-lead-fontWeight: normal;
 $p-lead-color: $clr-quinary;
 
+// Anchors (prefix a)
+$a-color: $clr-black;
+$a-fontSize: 1rem;
+$a-fontWeight: bold;
+$a-paddingWithIcon: 2rem;
+
 // Buttons (prefix btn)
 $btn-default-fontSize: 1rem; // 16px
 $btn-default-lineHeight: 1;
@@ -169,7 +175,7 @@ $btn-default-padding: .85rem 1.5rem;
 $btn-default-color: $clr-black;
 $btn-default-backgroundColor: $clr-tertiary; 
 
-$btn-default-paddingWithButtonIcon: 3.5rem;
+$btn-default-paddingWithIcon: 3.5rem;
 $btn-default-transition: color $transition-fast, background-color $transition-fast;
 $btn-default-borderRadius: .5rem;
 

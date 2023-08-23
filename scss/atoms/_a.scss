@@ -1,7 +1,14 @@
+///////////////////////////////////////////////
+// Links and Buttons
+///////////////////////////////////////////////
+
 a {
 
     position: relative;
     text-decoration: none;
+    color: $a-color;
+    font-size: $a-fontSize;
+    font-weight: $a-fontWeight;
 
     &:hover,
     &:focus,
@@ -11,7 +18,9 @@ a {
         // Add general hover effect here
     }
 
-    // All buttons
+    ///////////////////////////////////////////////
+    // Buttons
+    ///////////////////////////////////////////////
     &.btn {
 
         color: $btn-default-color;
@@ -79,7 +88,7 @@ a {
             // Icon on left side
             &-left {
 
-                padding-left: $btn-default-paddingWithButtonIcon;
+                padding-left: $btn-default-paddingWithIcon;
 
                 &::after {
 
@@ -90,7 +99,7 @@ a {
             // Icon on right side
             &-right {
 
-                padding-right: $btn-default-paddingWithButtonIcon;
+                padding-right: $btn-default-paddingWithIcon;
 
                 &::after {
 
@@ -101,6 +110,34 @@ a {
             &:hover {
 
                 // override button hover if necessary
+            }
+        }
+
+
+        ///////////////////////////////////////////////
+        // Links with Icons
+        ///////////////////////////////////////////////
+        
+        &:not(.btn).icon {
+
+            &-left {
+
+                padding-left: $a-paddingWithIcon;
+
+                &::after {
+
+                    @include icon(left);
+                }
+            }
+
+            &-right {
+
+                padding-right: $a-paddingWithIcon;
+
+                &::after {
+
+                    @include icon(right);
+                }
             }
         }
     }
