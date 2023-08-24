@@ -13,23 +13,21 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up SSH key
-      env:
-        DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
-      run: |
-        eval "$(ssh-agent -s)"
-        ssh-add - <<< "$DEPLOY_SSH_KEY"
-
     - name: Deploy to server
       env:
+        DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
         HOST: ${{ secrets.DEV_HOST }}
         USER: ${{ secrets.DEV_USER }}
         TARGET: ${{ secrets.DEV_TARGETDIRECTORY }}
       run: |
+        # Set up SSH Key
+        eval "$(ssh-agent -s)"
+        ssh-add - <<< "$DEPLOY_SSH_KEY"
+
+        # Build & Cleanup
         npm install
         npm run build
         echo "Compiled assets..."
-
         rm -rf node_modules
         rm package.json
         rm package-lock.json
@@ -38,5 +36,6 @@ jobs:
         rm .gitignore
         rm README.md
 
+        # Deploy
         echo "Uploading files..." 
         rsync -avz -e "ssh -o StrictHostKeyChecking=no" --delete ./ $USER@$HOST:$TARGET
