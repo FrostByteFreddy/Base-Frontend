@@ -3,9 +3,42 @@ section {
 
     &[data-component="hero"] {
 
+        position: relative;
+
         // Caluclate height for Desktop
         $section-heroActualHeightDesktop: calc((#{$section-heroHeight} - 2 * #{$section-heroVerticalPadding}) - #{$header-heightDesktopMaximized});
         min-height: $section-heroActualHeightDesktop;
+
+        @include background-image(cover); // Include background-image cover
+        
+        h1, .h1,
+        h2, .h2,
+        h3, .h3,
+        h4, .h4,
+        h5, .h5,
+        h6, .h6,
+        p {
+
+            // Override the text Color
+            color: $section-heroTextColor;
+        }
+
+        // Overlay
+        &::before {
+
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: $section-heroBackgroundImageOverlayColor;
+            opacity: $section-heroBackgroundImageOverlayopacity;
+        }
+
+
+        & > * {
+
+            position: relative;
+            z-index: 1;
+        }
 
         // Calucalate height on mobile
         @include below('md') {

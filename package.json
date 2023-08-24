@@ -17,7 +17,6 @@
     "build": "npm run prebuild && npm run build:scss && npm run minify-obfuscate",
     "watch:scss": "nodemon -e scss -x \"npm run sass\"",
     "watch:js": "nodemon -e js -x \"npm run minify-obfuscate\"",
-    "start": "concurrently \"npm:watch:scss\" \"npm:watch:js\" \"npm:serve\"",
-    "serve": "browser-sync start --server --files 'assets/css/*.css, assets/js/*.js, assets/preview.html' --startPath assets/preview.html"
+    "start": "concurrently \"npm:watch:scss\" \"npm:watch:js\" \"npm:serve\""
   }
 }

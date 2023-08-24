@@ -11,7 +11,7 @@ $clr-primary: #CD6799;
 $clr-secondary: #CD9E67; 
 $clr-tertiary: #67CD9E;  
 $clr-quaternary: #679ECD;
-$clr-quinary: #7206d1; 
+$clr-quinary: #2c0053; 
 
 // Lighter shades (might result in white if the percentage is too hight)
 $clr-primaryLight: lighten($clr-primary, 20%);
@@ -98,17 +98,23 @@ $container-maxWidthMobile: calc(100vw - 2 * #{$container-padding});
 $section-heroVerticalPadding: 40px;
 $section-heroHeight: 100svh;
 
+$section-heroTextColor: $clr-quinary;
+
+$section-heroBackgroundImageOverlayColor: $clr-white;
+$section-heroBackgroundImageOverlayopacity: .3;
+
+
 ///////////////////////////////////////////////
 // Headings (prefix tag)
 ///////////////////////////////////////////////
 
 // Global for all Headings
-$headings-lineHeight: 1.25;
+$headings-lineHeight: 1.05;
 $headings-marginTop: 2rem;
 $headings-marginBottom: 1rem;
 
 // Heading 1
-$h1-color: $clr-quinary;
+$h1-color: $clr-quinaryLight;
 $h1-fontSize: 3.375rem;
 $h1-fontWeight: bold;
 $h1-lineHeight: $headings-lineHeight;
@@ -122,7 +128,7 @@ $h2-lineHeight: $headings-lineHeight;
 $h2-fontFamily: $ff-main;
 
 // Heading 3
-$h3-color: $clr-quinary;
+$h3-color: $clr-quinaryLight;
 $h3-fontSize: 1.875rem;
 $h3-fontWeight: bold;
 $h3-lineHeight: $headings-lineHeight;
@@ -239,6 +245,7 @@ $navbar-backgroundColor: $clr-black;
 $navbar-shadowColor: $clr-primaryLight;
 $navbar-shadowOpacityHex: FF;
 $navbar-boxShadowBottom: 0 0px 30px #{$navbar-shadowColor}#{$navbar-shadowOpacityHex};
+$navbar-boxShadowBottom: 'none';
 
 // Navbar Links
 $navbar-linkFontSize: 1.25rem;
