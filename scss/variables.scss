@@ -7,7 +7,7 @@ $clr-white: #ffffff;
 $clr-transparent: transparent;
 
 // Colors (prefix clr)
-$clr-primary: #CD6799; 
+$clr-primary: #9d1456; 
 $clr-secondary: #CD9E67; 
 $clr-tertiary: #67CD9E;  
 $clr-quaternary: #679ECD;
@@ -230,10 +230,10 @@ $li-listIconLeftOffset: .2rem;
 
 // <header>
 $header-heightDesktopMaximized: 110px;
-$header-heightDesktopMinimized: 110px;
-$header-heightMobileMaximized: 70px;
-$header-heightMobileMinimized: 70px;
-$header-hideOnScroll: 'yes';
+$header-heightDesktopMinimized: 90px;
+$header-heightMobileMaximized: 80px;
+$header-heightMobileMinimized: 60px;
+$header-hideOnScroll: 'no';
 
 $header-heightTransitionSpeed: $transition-fast;
 

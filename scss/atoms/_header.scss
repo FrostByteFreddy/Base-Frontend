@@ -19,11 +19,12 @@ header {
     // Minimized state Desktop
     &[data-state="minimized"] {
 
-        height: $header-heightDesktopMinimized;
-
         @if $header-hideOnScroll == 'yes' {
 
-            top: -$header-heightDesktopMinimized;
+            top: -$header-heightDesktopMaximized;
+        } @else {
+
+            height: $header-heightDesktopMinimized;
         }
     }
 
@@ -36,11 +37,12 @@ header {
         // Minimized state Mobile
         &[data-state="minimized"] {
 
-            height: $header-heightMobileMinimized;
-
             @if $header-hideOnScroll == 'yes' {
 
-                top: -$header-heightMobileMinimized;
+                top: -$header-heightMobileMaximized;
+            } @else {
+
+                height: $header-heightMobileMinimized;
             }
         }
     }
