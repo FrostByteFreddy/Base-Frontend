@@ -1,4 +1,4 @@
-.burger-menu {
+#burger-menu {
 
     position: relative;
     height: $navbar-burgerMenuHeight;
@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
 
-    &-bar {
+    .burger-menu-bar {
 
         position: absolute;
         display: block;
