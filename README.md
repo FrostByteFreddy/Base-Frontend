@@ -30,6 +30,7 @@ npm start
 ## Preview Your Changes
 
 We utilize BrowserSync for seamless real-time updates whenever asset files undergo changes. When you run 'npm start', a browser window will automatically launch, presenting you with the live preview.
+This is a preview, displaying the usage of the SCSS and JS from this repo: http://dev.burncodes.ch/
 
 ## Contributing
 
